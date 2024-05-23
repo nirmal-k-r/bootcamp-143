@@ -1,0 +1,32 @@
+/* this is a comment */
+
+body {
+    background-color: aquamarine;
+}
+
+p, a {
+   font-family: Verdana, Geneva, Tahoma, sans-serif; 
+   font-size: 20px;
+   color: blue;
+}
+
+h1 {
+    color: red;
+}
+
+img {
+    width: 250px;
+    border-radius: 5%;
+}
+
+.orangeText {
+    color: orange;
+}
+
+.large{
+    font-size: 30px;
+}
+
+#small{
+    font-size: 10px;
+}

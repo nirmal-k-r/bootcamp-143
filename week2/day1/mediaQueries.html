@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media queries</title>
+    </head>
+    <body>
+        <h1 class="title">This is a title</h1>
+        <div class="box"></div>
+    </body>
+
+    <style>
+
+        body{
+            background-color: grey;
+        }        
+
+
+        @media all and (min-width: 1000px) {
+            .title{
+                color: red;
+            }
+
+            .box{
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+            }
+        }
+
+        @media all and (min-width: 700px) and (max-width: 999px) { 
+            .title{
+                color: green;
+            }
+
+            .box{
+                width: 400px;
+                height: 400px;
+                background-color: yellow;
+            }
+        }
+
+        @media all and (min-width: 0px) and (max-width: 699px) {
+            .title{
+                color: purple;
+            }
+
+            .box{
+                width: 500px;
+                height: 500px;
+                background-color: royalblue;
+            }
+            
+        }
+
+
+    </style>
+</html>
+
+

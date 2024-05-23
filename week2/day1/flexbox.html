@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flexbox</title>
+    </head>
+    <body>
+        <h1 class="title">Flexbox</h1>
+
+        <div class="flexbox">
+            
+            <div class="item">1</div>
+            <div class="item largeitem">2</div>
+            <div class="item">3</div>
+            <div class="item item-last">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+
+        </div>
+
+        <!-- <div class="box"></div> -->
+
+    </body>
+
+    <style>
+        .item{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            /* flex:1; */
+        }
+        .largeitem{
+            /* flex:2; */
+        }
+
+        .item-last{
+            order:8;
+            background-color: blue;
+        }
+
+       .flexbox{
+            display: flex;
+            width: 100%;
+            gap: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+           
+       }
+
+    </style>
+        
+</html>
