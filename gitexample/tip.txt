@@ -1,0 +1,7 @@
+Github tips
+ - git add 'file path' to add one file only
+ - git rm 'file path' to remove one file from Github
+ - git stash to clear all changes and revert to previous commit
+ - git branch branchname to create a new branch
+ - git checkout to move to a new branch
+ - git merge other_branch_name to merge current branch with other branch
