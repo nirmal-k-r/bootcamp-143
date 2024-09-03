@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <div id="container">Users:</div>
+        <ul class="list">
+            <li>John</li>
+            <li>Pete</li>
+        </ul>
+        <ul class="list">
+            <li>Sarah</li>
+            <li>Dan</li>
+        </ul>
+    </body>
+
+    <script>
+        container=document.getElementById("container");
+        console.log(container.innerHTML);
+
+
+        items=document.getElementsByClassName("list");
+        for (set of items){
+            content=set.children;
+            // for (item of content){
+            //     console.log(item.textContent);
+            // }
+            console.log(content[0].textContent);
+        }
+
+    </script>
+</html>

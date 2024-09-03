@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Example</title>
+    </head>
+    <body>
+        <h1 id="title">
+            Hello World
+        </h1>
+
+        <p id="text">This is great!</p>
+
+        <p id="description">Blank</p>
+        
+    </body>
+
+    <script>
+        //how to select an element by id
+        title=document.getElementById("title");
+        console.log(title);
+        console.log(title.textContent);
+
+
+        //second way to select an element by id
+        text=document.querySelector("#text");
+        console.log(text);
+        console.log(text.textContent);
+
+         
+        //how to change the text of an element
+        document.getElementById("description").textContent="Hurray! it worked";
+
+
+        //create an element
+        new_title=document.createElement("h3");
+        new_title.innerHTML="This is a new title";
+
+        //add the new element to the body
+        document.body.appendChild(new_title);
+
+
+        //add an image
+        img=document.createElement("img");
+        img.src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg";
+        img.width=300;
+        document.body.appendChild(img);
+
+        description=document.getElementById("description");
+        description.style.color="red";
+
+
+        document.body.removeChild(description);
+
+
+        //select all p elements
+        elements=document.querySelectorAll("p");
+        
+        for (element of elements){
+            element.style.color="blue";
+        }
+
+    </script>
+</html>

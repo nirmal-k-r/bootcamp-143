@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attributes</title>
+    </head>
+    <body>
+
+        <h1 id="title" style="color:red;">Title</h1>
+
+        <p>paragraph</p>
+
+    </body>
+
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color:blue;
+            display: block;
+        }
+
+        .redBorder{
+            border: 2px solid red;
+        }
+    </style>
+
+    <script>
+        title=document.querySelector('#title');
+        console.log(title.hasAttribute('style'));
+
+        // title.style="color:blue;"; 
+
+        title.setAttribute('style','color:green;');
+
+        // title.removeAttribute('style'); 
+
+        console.log(title.getAttribute('style'));
+
+
+        box=document.createElement('div');
+        box.className='box';
+        box.classList.add('redBorder');
+
+        document.body.appendChild(box);
+
+
+
+
+    </script>
+</html>

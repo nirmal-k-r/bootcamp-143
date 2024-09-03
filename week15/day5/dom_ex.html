@@ -1,0 +1,35 @@
+<html>  <!-- this is the root element in other words the document -->
+    <body>
+        <div>
+            Users:
+        </div>
+        <ul>
+            <li>John</li>
+            <li>Pete</li>
+        </ul>
+    </body>
+
+    <script>
+        //access the first element
+        body=document.body;
+        // body=document.children[0];
+        console.log(body);
+        console.log(body.children[0]);
+        console.log(body.children[0].innerHTML);
+
+        console.log(body.children[1]);
+
+        console.log(body.children[1].firstElementChild);
+
+        second_list_element=body.children[1].children[1];
+        console.log(second_list_element);
+
+        console.log(second_list_element.parentElement);
+
+        console.log(second_list_element.textContent);
+
+
+        
+
+    </script>
+</html>
