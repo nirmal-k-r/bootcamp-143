@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drag and drop</title>
+
+        <style>
+            .box1{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                margin: 10px;
+                display: inline-block;
+            }
+            .box2{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                margin: 10px;
+                display: inline-block;
+            }
+            .box3{
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+                margin: 10px;
+                display: inline-block;
+            }
+            .box4{
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                margin: 10px;
+                display: inline-block;
+            }
+
+            .dropzone{
+                width: 500px;
+                height: 500px;
+                background-color: grey;
+                margin: 10px;
+                display: block;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <h1>Drag and drop</h1>
+
+        <div class="box1" draggable="true" value="red" id="box1"></div>
+        <div class="box2" draggable="true" value="blue" id="box2"></div>
+        <div class="box3" draggable="true" value="yellow" id="box3"></div>
+        <div class="box4" draggable="true" value="green" id="box3"></div>
+        
+        <br>
+        <div dropzone="copy" id="dropzone" class="dropzone"></div>
+
+    </body>
+
+    <script>
+        box1=document.getElementById('box1');
+        dropzone=document.getElementById('dropzone');
+        
+        box1.ondragstart=function(event){
+            event.dataTransfer.setData('text', 'red');
+            console.log('dragging');
+        };
+       
+        
+
+        dropzone.ondragover=function(event){
+            event.preventDefault();
+            console.log('dropped');
+
+            // this.style.backgroundColor=event.dataTransfer.getData('value');
+            console.log(event.dataTransfer.getData('text'));    
+
+        }
+
+    </script>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search</title>
+
+        <style>
+            .result{
+                border: 1px solid rgb(112, 112, 112);
+                padding: 10px;
+                width: 200px;
+                margin-left: 10px;
+                margin-right: 10px;
+                color: rgb(51, 51, 51);
+            }
+
+            .input{
+                padding: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 10px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Search</h1>
+        <form id="searchForm">
+            <input class='input' style="width:200px;" type="text" id="search" placeholder="Search">
+        </form>
+  
+        <div id="results">
+          
+        </div>
+    </body>
+
+    <script>
+       search_button=document.getElementById('search');
+    
+       search_button.addEventListener('input', function(event){
+        event.preventDefault();
+        search(event.target.value);
+       });
+
+       
+        function search(keyword){
+
+            if (keyword.length==0){
+                results=[];
+                showResults(results);
+            
+            }else{
+                products=['Apple','Avocado','Ananas','Banana','Orange','Pineapple','Mango','Grapes','Strawberry','Watermelon','Peach','Kiwi'];
+
+                results=products.filter(function(product){
+                    return product.toLowerCase().includes(keyword.toLowerCase());
+                });
+
+                showResults(results);
+            }
+        }
+
+        function showResults(){
+            results_div=document.getElementById('results');
+            results_div.innerHTML='';
+            
+            for (result of results){
+                new_result=document.createElement('div');
+                new_result.classList.add('result');
+                new_result.innerHTML=result;
+                results_div.appendChild(new_result);
+            }
+
+        }
+
+
+    </script>
+</html>

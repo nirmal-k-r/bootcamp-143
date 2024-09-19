@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervals</title>
+</head>
+    <body>
+        <h1>Timeouts</h1>
+
+        <button onclick="call()" >Start</button>
+
+        <button onclick="stop()" >Stop</button>
+        
+    </body>
+
+
+    <script>
+        var timeoutid=None;
+        function call(){
+            timeoutid=setTimeout(displayMessage, 5000); 
+        }
+
+        function stop(){
+            clearTimeout(timeoutid);
+        }
+
+        function displayMessage(){
+            alert('You clicked on this button');
+        }
+
+    </script>
+</html>

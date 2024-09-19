@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <h1>Events and forms</h1>
+
+        <!-- validatin -->
+        <form action="https://google.com" id="myform">
+            <input type="text" id='name' placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <br><br>
+        <form id="searchForm">
+            <input type="text" id="search" placeholder="Search">
+
+            <input type="text" id="search2" placeholder="Search2">
+        </form>
+        
+    </body>
+
+    <script>
+        form=document.getElementById('myform');
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            password=document.getElementById('password').value;
+
+            if(password.length<4){
+                alert('Password must be at least 4 characters long');
+            }
+            else{
+                alert('Form can submitted');
+                // event.target.submit();
+            }
+        });
+
+
+        search_button=document.getElementById('search');
+        search_button.addEventListener('change', function(event){
+            alert('User seatched for: '+ event.target.value);
+        });
+
+        search2=document.getElementById('search2');
+        search2.addEventListener('keyup', function(event){
+            alert('User searched for: '+ event.target.value);
+        });
+
+    </script>
+</html>

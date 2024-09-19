@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slideshow</title>
+
+        <style>
+            .img{
+                height: 400px;
+                
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Slideshow</h1>
+        <img id='img' class="img" src="https://i.pinimg.com/originals/4c/21/e5/4c21e5a975cd3be8f9070e531e3ffde1.jpg">
+        <br>
+        
+        <button onclick="previous()">Previous</button>
+        <button onclick="next()">Next</button>
+
+        
+    </body>
+
+    <script>
+        var images=["https://i.pinimg.com/originals/4c/21/e5/4c21e5a975cd3be8f9070e531e3ffde1.jpg","https://www.giantbomb.com/a/uploads/scale_small/0/27/882868-g_lores.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJMjxRIXGPyQ5UQHMkyxsysQ25Zd_ZhLlDA&s","https://i.pinimg.com/736x/bc/67/42/bc67420ea45681367db5897e963dc330.jpg"];
+
+        var position=0;
+
+        function next(){
+            if (position==images.length-1){
+                position=0;
+            }else{
+                position=position+1;
+            }
+            document.getElementById('img').src=images[position];
+        }
+
+        function previous(){
+            if (position==0){
+                position=images.length-1;
+            }else{
+                position=position-1;
+            }
+            document.getElementById('img').src=images[position];
+        }
+
+    </script>
+</html>

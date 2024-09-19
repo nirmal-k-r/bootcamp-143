@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events intro</title>
+    </head>
+    <body>
+        <h1>Events intro</h1>
+
+        <button onclick="clickButton()">CLick me</button>
+
+        <button id="button2">Button 2</button>
+
+        <button id="button3">Button 3</button>   
+        
+        <button id="button4">Button4</button>  
+        
+        <button onclick="alert(this.innerHTML)">This is the text that we wanted!</button>
+
+        <br><br>
+
+        <img id="google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo" id="googleLogo">
+        
+        <br><br>
+
+        <form action="https://google.com" id="myform">
+            <input type="email"  id="email" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br><br>
+
+        <section onclick="clicked('You clicked section')">
+            <div onclick="clicked('You clicked div')">
+                <p onclick="clicked('You clicked para')">This is a para</p>
+            </div>
+        </section>
+
+        <br><br>
+        <section id="section" >
+            <div id="div" >
+                <p id="para">Para2</p>
+            </div>
+        </section>
+
+        <br><br>
+        <section id="section3">
+            <div id="div3">
+                <p id="para3">Para3</p>
+            </div>
+        </section>
+    </body>
+
+    <script>
+        //method 1
+        function clickButton(){
+            alert('Button clicked');
+        }
+        //method 2
+        button2=document.querySelector('#button2');
+        button2.onclick= function(){
+            alert('Button 2 clicked');
+        }
+
+        //method 3
+        button3=document.querySelector('#button3');
+
+        button3.addEventListener('click', function(){
+            alert('Button 3 clicked');
+        });
+
+
+        //method 4
+        function myCustomised(){
+            alert('Button 4 clicked');
+        }
+
+        button4=document.querySelector('#button4');
+        button4.addEventListener('click', myCustomised);
+
+
+        google=document.querySelector('#google');
+        google.addEventListener('mouseover', function(){
+            if (confirm('Do you want to go to Google?')){
+                window.location='https://www.google.com';  //redirects to google
+            }
+        });
+
+        //prevent default action
+        myform=document.querySelector('#myform');
+        myform.addEventListener('submit', function(event){
+            console.log(event);
+            event.preventDefault();
+            alert('Prevented default action');
+        });
+
+        function clicked(message){
+            alert(message);
+        }
+
+
+        //event capturing
+        section=document.querySelector('#section');
+        div=document.querySelector('#div');
+        para=document.querySelector('#para');
+
+        section.addEventListener('click', function(){
+            alert('Section clicked');
+        }, true);
+
+        div.addEventListener('click', function(){
+            alert('Div clicked');
+        }, true);
+
+        para.addEventListener('click', function(){
+            alert('Para clicked');
+        }, true);
+
+
+        //stop propagation
+        section3=document.querySelector('#section3');
+        div3=document.querySelector('#div3');
+        para3=document.querySelector('#para3');
+
+        section3.addEventListener('click', function(){
+            alert('Section3 clicked');
+        });
+
+        div3.addEventListener('click', function(event){;
+            alert('Div3 clicked');
+        });
+
+        para3.addEventListener('click', function(event){
+            event.stopPropagation();
+            alert('Para3 clicked');
+            
+        });
+
+
+
+    </script>
+</html>

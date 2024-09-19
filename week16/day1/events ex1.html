@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Events Ex1</title>
+    </head>
+    <body>
+        <h1>Events Ex1</h1>
+        <table id="sampleTable" border="1"> 
+            <tr>
+                <td>Row1 cell1</td> 
+                <td>Row1 cell2</td>
+            </tr> 
+            <tr>
+                <td>Row2 cell1</td> 
+                <td>Row2 cell2</td>
+            </tr> 
+        </table>
+
+        <br>
+
+        <input type="button" onclick="insertRow()" value="Insert row">  
+        
+    </body>
+
+    <script>
+        function insertRow(){
+            row=document.createElement('tr');
+            cell1=document.createElement('td');
+            cell2=document.createElement('td');
+
+            cell1.innerHTML='New cell';
+            cell2.innerHTML='New cell';
+
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+
+            table=document.querySelector('#sampleTable');
+            table.appendChild(row);
+        }
+
+
+    </script>
+</html>
