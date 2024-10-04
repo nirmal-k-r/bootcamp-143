@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <style>
+        .player{
+            width: 100px;
+            height: 100px;
+            background-image: url('sprite.png');
+            position: absolute;
+        }
+
+        .canvas{
+            width: 1000px;
+            height: 600px;
+            border: 1px solid black;
+            background-color: lightblue;
+            position: relative;
+        }
+
+    </style>
+</head>
+    <body>
+        <h1>Game</h1>
+
+        <div id="menu">
+            <button id="play">Play</button>
+
+        </div>
+
+        <div id="canvas" class="canvas"></div>
+            
+
+        <script>
+            playButton=document.querySelector('#play');
+            playButton.addEventListener('click', play);
+
+            document.querySelector('#canvas').style.display='none';
+
+            function play(){
+                document.querySelector('#canvas').style.display='block';
+                spawn();
+                player=document.querySelector('.player');
+                player.style.top='500px';
+                player.style.left='0px';
+                
+                //game loop
+                setInterval(function(){
+                    // //keep moving right
+                    // player.style.left=parseInt(player.style.left)+10+'px';
+                    console.log(player.style.top);
+                    //fall below - gravity
+                    let position=parseInt(player.style.top);
+                    if (position<500){
+                        player.style.top=parseInt(player.style.top)+10+'px';
+                    }
+                }, 100);
+
+                //keyboard controls
+                document.addEventListener('keydown', function(event){
+                    if (event.key=='ArrowUp'){
+                        if(parseInt(player.style.top)>100){
+                            player.style.top=parseInt(player.style.top)-100+'px';
+                        }
+                    }
+                    // if (event.key=='ArrowDown'){
+                    //     player.style.top=parseInt(player.style.top)+100+'px';
+                    // }
+                    if (event.key=='ArrowLeft'){
+                        if (parseInt(player.style.left)>0){
+                            player.style.left=parseInt(player.style.left)-100+'px';
+                        }
+                    }
+                    if (event.key=='ArrowRight'){
+                        if (parseInt(player.style.left)<900){
+                            player.style.left=parseInt(player.style.left)+100+'px';
+                        }
+                    }
+                });
+
+
+
+            }
+
+            function spawn(){
+                document.querySelector('#canvas').innerHTML='';
+
+                let player=document.createElement('div');
+                player.classList.add('player');
+                document.querySelector('#canvas').appendChild(player);
+            }
+               
+
+        </script>
+        
+    </body>
+</html>
