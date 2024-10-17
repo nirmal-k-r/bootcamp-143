@@ -10,6 +10,7 @@ fs.readFile('grocery.txt','utf8',(err,data)=>{
         console.log(data);
     }
 });
+ 
 
 //write to a text file
 fs.writeFile('grocery.txt','Milk, Bread, Eggs, Cheese',(err)=>{
